@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: aqua;
+            border: 2px solid black;
+            padding: 35px;
+            margin: 35px;
+            cursor: pointer;
+        }
+
+        .childContainer {
+            background-color: blue;
+            border: 2px solid black;
+            padding: 35px;
+            margin: 35px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Events, Event Bubbling, setInterval & setTimeout </h1>
+    <!-- <div class="container">
+        <div class="box">
+            <p>
+                This is inner child
+            </p>
+            <button id="btn">
+                Click me
+            </button>
+        </div>
+    </div> -->
+
+    <h2>Event Bubbling</h2>
+
+    <div class="container">
+        <div class="childContainer">
+            <div class="box">
+                <p>
+                    I am a child
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="script-2.js"></script>
+
+</html>

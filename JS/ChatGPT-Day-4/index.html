@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions, Callbacks, and Arrow Functions </title>
+</head>
+
+<body>
+    <h1>Random Joke Generator</h1>
+
+    <p id="jokes_render"></p>
+    <button id="joke_generate"> Make Me Laugh </button>
+
+    <!-- Ek button ho: “Make Me Laugh 😂”
+        Jab click ho:
+        Random joke show ho p tag mein
+        Har baar naya joke aaye -->
+</body>
+
+<script>
+    const jokes = [
+        "Itna kaam kar liya hai ke boss bhi mujhe sir kehne laga hai",
+        "Zindagi ne toh sabak diya, par attendance nahi lagayi.",
+        "Dil garden garden hota agar salary monthly ki jagah daily milti",
+        "WhatsApp par last seen gayab, par online shopping full active",
+        "Ghar walay kehte hain shaadi kar lo, jaise Netflix ka free trial ho",
+    ]
+
+    const jokes_display = document.getElementById('jokes_render');
+    const jokes_btn = document.getElementById('joke_generate');
+
+    function randomJokes() {
+        const jokeLength = Math.floor(Math.random() * jokes.length);
+        return jokes[jokeLength];
+    }
+
+    jokes_btn.addEventListener("click", () => {
+        jokes_display.innerHTML = randomJokes();
+    })
+
+
+</script>
+
+</html>

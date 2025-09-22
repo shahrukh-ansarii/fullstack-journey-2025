@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise | Async Await</title>
+  </head>
+
+  <body>
+    <h3>Promise | Async Await</h3>
+  </body>
+
+  <script>
+    // const pro = new Promise((resolve, reject) => {
+    //     const delivered = true
+
+    //     if (delivered) {
+    //         resolve("Pizza mil gya jani :)")
+    //     }
+    //     else {
+    //         reject("Delivery Boy bhag gya :( ")
+    //     }
+    // })
+    //     .then((msg) => console.log(msg))
+    //     .catch((err) => console.log(err));
+
+    // Async Await Real-Life Example
+
+    function orderPizza() {
+      return new Promise((reslove, reject) => {
+        const delivered = true;
+
+        setTimeout(() => {
+          if (delivered) {
+            reslove("Pizza agya Ustad.... :) ");
+          } else {
+            reject("Pizza Shatt hai Ustad.. :( ");
+          }
+        }, 2000);
+      });
+    }
+
+    async function getPizza() {
+      try {
+        console.log("Pizza Order Kia......");
+        const pizza = await orderPizza();
+        console.log("Delivered:", pizza);
+      } catch (error) {
+        console.log("Error:", error);
+      }
+    }
+
+    getPizza();
+  </script>
+</html>

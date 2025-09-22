@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Counter App</h1>
+
+    <br><br>
+
+    <button id="inc">Increment</button>
+    <button id="dec">Decrement</button>
+    <button id="reset">Reset</button>
+    <h3 id="result"></h3>
+
+</body>
+
+<script>
+
+    const display = document.getElementById('result')
+    const incBtn = document.getElementById('inc')
+    const decBtn = document.getElementById('dec')
+    const reserBtn = document.getElementById('reset')
+
+    let count = 0;
+
+    incBtn.addEventListener("click", () => {
+        count++;
+        display.innerText = count;
+
+    })
+
+    decBtn.addEventListener("click", () => {
+        count--;
+        display.innerText = count;
+
+    })
+
+    reserBtn.addEventListener("click", () => {
+        count = 0;
+        display.innerText = count;
+
+    })
+
+
+
+</script>
+
+</html>

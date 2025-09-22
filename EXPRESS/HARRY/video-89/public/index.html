@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POST Request Testing</title>
+  </head>
+  <body>
+    <h1>This is GET Using HTML Serving File</h1>
+  </body>
+
+  <script>
+    async function postTest(params) {
+      let a = await fetch("/", { method: "get" });
+      let b = await a.text();
+      console.log(b);
+    }
+
+    postTest();
+  </script>
+</html>

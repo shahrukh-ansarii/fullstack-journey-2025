@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faulty Calculator</title>
+</head>
+
+<body>
+    <script>
+        function faultyCalculator() {
+            // Step 1: User inputs for numbers
+            const num1 = parseFloat(prompt("Enter the first number:"));
+            const num2 = parseFloat(prompt("Enter the second number:"));
+            
+            // Step 2: User selects an operation
+            const operation = prompt("Select an operation (+, -, *, /):");
+            
+            // Step 3: Check if inputs are valid numbers
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Invalid numbers! Please enter valid numbers.");
+                return;
+            }
+
+            // Step 4: Random chance for faulty operation (10%)
+            const isFaulty = Math.random() < 0.1;
+            let result;
+
+            if (isFaulty) {
+                // Perform incorrect operation (10% of the time)
+                switch (operation) {
+                    case '+':
+                        result = num1 - num2; // + instead of -
+                        break;
+                    case '-':
+                        result = num1 / num2; // - instead of /
+                        break;
+                    case '*':
+                        result = num1 + num2; // * instead of +
+                        break;
+                    case '/':
+                        result = Math.pow(num1, num2); // / instead of **
+                        break;
+                    default:
+                        alert("Invalid operation! Please enter one of +, -, *, /.");
+                        return;
+                }
+                alert(`Faulty Result: ${result} (Wrong Operation)`);
+            } else {
+                // Perform correct operation (90% of the time)
+                switch (operation) {
+                    case '+':
+                        result = num1 + num2;
+                        break;
+                    case '-':
+                        result = num1 - num2;
+                        break;
+                    case '*':
+                        result = num1 * num2;
+                        break;
+                    case '/':
+                        if (num2 !== 0) {
+                            result = num1 / num2;
+                        } else {
+                            alert("Error: Cannot divide by zero");
+                            return;
+                        }
+                        break;
+                    default:
+                        alert("Invalid operation! Please enter one of +, -, *, /.");
+                        return;
+                }
+                alert(`Correct Result: ${result}`);
+            }
+        }
+
+        // Run the calculator function when the script loads
+        faultyCalculator();
+    </script>
+</body>
+
+
+<!-- <script src="index.js"></script> -->
+
+</html>

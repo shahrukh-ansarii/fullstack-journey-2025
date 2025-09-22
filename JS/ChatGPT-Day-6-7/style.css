@@ -1,0 +1,41 @@
+body {
+  background-color: rgb(255, 249, 241);
+  padding: 10px auto;
+  margin: 10px auto;
+}
+
+.container .main-head h1 {
+  text-align: center;
+  font-size: 30px;
+  color: rgb(20, 104, 83);
+}
+.container .main-head p {
+  padding: 10px 10pc;
+  text-align: center;
+  font-size: 18px;
+  color: #000;
+}
+
+.container .box {
+  text-align: center;
+  align-items: center;
+  height: 200px;
+  border: 1px solid #146853;
+  border-radius: 25px;
+  margin: auto;
+  width: 50%;
+  padding: 20px;
+}
+.container .box input {
+  padding: 5px 20px;
+  border-radius: 25px;
+  font-size: 12px;
+  border: 1px solid #146853;
+}
+
+.container .box button {
+  padding: 5px 20px;
+  border-radius: 25px;
+  background-color: #146853;
+  color: #fff;
+}

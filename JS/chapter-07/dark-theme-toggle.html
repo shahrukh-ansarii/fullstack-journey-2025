@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Theme Toggle</title>
+
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            transition: 0.3s;
+        }
+
+        .dark-theme {
+            background-color: #222;
+            color: white;
+        }
+    </style>
+</head>
+
+<body id="page">
+    <h2 id="heading">Welcome to Light Mode</h2>
+    <button id="toggleBtn">Dark Mode On</button>
+</body>
+
+<script>
+    const head = document.getElementById('heading')
+    const page = document.getElementById('page')
+    const dark = document.getElementById('toggleBtn')
+
+    const defaultText = head.innerText;
+    const defaultBtnTxt = dark.innerText;
+
+    dark.addEventListener("click", () => {
+        page.classList.toggle("dark-theme");
+
+        if (page.classList.contains('dark-theme')) {
+            dark.innerHTML = "Dark Mode Off"
+            head.innerHTML = "Welcome to This is Dark Mode"
+        }
+        else {
+            dark.innerHTML = defaultBtnTxt;
+            head.innerHTML = defaultText;
+        }
+    })
+
+
+
+</script>
+
+</html>

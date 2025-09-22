@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart Total Calculator</title>
+</head>
+
+<body>
+
+
+    <h1>
+        🛒 Mini Project: Shopping Cart Total Calculator
+    </h1>
+    <p>
+        🎯 Goal: <br><br>
+        Ek array of products hai — har product mein name aur price hai. Tu:<br><br>
+
+        Total calculate kare<br><br>
+
+        Sirf mehngay items filter kare<br><br>
+
+        Discounted price wala naya array banaye
+    </p>
+
+</body>
+
+<script>
+    // 🧪 Tasks:
+    // Total price nikaal using reduce()
+    // Sirf wo products show karo jinki price >= 1000 ho(filter)
+    // 10 % discount laga ke new prices ka array banao(map)
+
+    const cart = [
+        { name: "Shirt", price: 1000 },
+        { name: "Jeans", price: 2500 },
+        { name: "Shoes", price: 5000 },
+        { name: "Cap", price: 300 }
+    ];
+
+    // Task #1
+
+    // const totap_price = cart.reduce((a, b) => { return a + b.price; }, 0)
+    // console.table(totap_price);
+
+    // Task #2
+
+    // const price_up = cart.filter((e) => e.price > 1000)
+    // console.table(price_up)
+
+    // Task #3
+
+    // const discounts = cart.map((e) => {
+    //     return {
+    //         name: e.name,
+    //         price: e.price - (e.price * 0.10),
+    //     }
+    // })
+
+    const discounts = cart.map(e => e.price * 0.10);
+
+    console.table(discounts)
+
+
+
+
+
+
+
+
+</script>
+
+</html>

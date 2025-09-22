@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>isijournals.com - Coming Soon</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #800080, #4b004b);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      background-color: rgba(255,255,255,0.05);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(6px);
+    }
+
+    .brand {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #f4b905; /* Accent color */
+    }
+
+    .heading {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .subtext {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      color: #f0f0f0;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .countdown div {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 8px;
+      min-width: 70px;
+    }
+
+    .countdown span {
+      display: block;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #f4b905;
+    }
+
+    .countdown small {
+      font-size: 0.8rem;
+      color: #ddd;
+    }
+
+    .footer {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="brand">isijournals.com</h1>
+    <h2 class="heading">We’re Launching Soon!</h2>
+    <p class="subtext">Our website is under construction. Stay tuned for something amazing!</p>
+
+    <div class="countdown" id="countdown">
+      <div><span id="days">00</span><small>Days</small></div>
+      <div><span id="hours">00</span><small>Hours</small></div>
+      <div><span id="minutes">00</span><small>Minutes</small></div>
+      <div><span id="seconds">00</span><small>Seconds</small></div>
+    </div>
+
+    <p class="footer">© 2025 isijournals.com | All rights reserved.</p>
+  </div>
+
+  <script>
+    // Set your launch date here
+    const launchDate = new Date("June 30, 2026 00:00:00").getTime();
+
+    const countdown = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days >= 0 ? days : "00";
+      document.getElementById("hours").innerText = hours >= 0 ? hours : "00";
+      document.getElementById("minutes").innerText = minutes >= 0 ? minutes : "00";
+      document.getElementById("seconds").innerText = seconds >= 0 ? seconds : "00";
+
+      if (distance < 0) {
+        clearInterval(countdown);
+        document.getElementById("countdown").innerHTML = "We are live!";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
