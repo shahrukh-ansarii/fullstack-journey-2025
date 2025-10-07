@@ -3,12 +3,12 @@ const router = express.Router();
 
 // define the home page route
 router.get("/", (req, res) => {
-  res.send("Shop Home page");
+  res.send("Products Home page");
 });
 
-// define the Shops inner route
+// define the Productss inner route
 router.get("/:slug", (req, res) => {
-  res.send(`Welcome to Shop ${req.params.slug}`);
+  res.send(`Welcome to Products ${req.params.slug}`);
 });
 
 module.exports = router;

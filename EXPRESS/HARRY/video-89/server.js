@@ -1,12 +1,14 @@
 const express = require("express");
 const blogs = require("./routes/blogs.js");
 const shops = require("./routes/shops.js");
+const products = require("./routes/products.js");
 
 const app = express();
 const port = 3000;
 
 app.use("/blogs", blogs);
 app.use("/shops", shops);
+app.use("/products", products);
 
 // Public file Serving
 app.use(express.static("public"));
