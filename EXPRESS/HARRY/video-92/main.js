@@ -5,7 +5,7 @@ const port = 3000;
 app.set("view engine", "ejs");
 
 metaTitle = "Bootstrap Demo";
-brandName = "TEMPLATE WEB";
+brandName = "NAQEEB WEB";
 app.get("/", (req, res) => {
   res.render("index", { metaTitle, brandName });
 });
