@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Company Database</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f3f7fa;
+        text-align: center;
+        margin: 40px;
+      }
+
+      h1 {
+        color: #196164;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      /* Buttons shared styling */
+      form button {
+        color: #fff;
+        padding: 10px 18px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 15px;
+        transition: 0.3s;
+      }
+
+      /* Generate button (first button) */
+      form:first-of-type button {
+        background: #196164;
+      }
+      form:first-of-type button:hover {
+        background: #134b49;
+      }
+
+      /* Clear button (second button) */
+      form:nth-of-type(2) button {
+        background: #c62828;
+      }
+      form:nth-of-type(2) button:hover {
+        background: #8e1b1b;
+      }
+
+      table {
+        width: 90%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        background: #ffffff;
+      }
+
+      th {
+        background-color: #196164;
+        color: white;
+        padding: 12px;
+        font-size: 16px;
+      }
+
+      td {
+        padding: 10px;
+        font-size: 15px;
+        color: #333;
+      }
+
+      tr:nth-child(even) {
+        background: #e7eff1;
+      }
+
+      tr:hover {
+        background: #dce8e9;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Company Employees</h1>
+
+    <form action="/generate" method="POST">
+      <button type="submit">Generate Employee</button>
+    </form>
+
+    <form action="/clear" method="POST" style="margin-top: 10px">
+      <button type="submit">Clear All Employees</button>
+    </form>
+
+    <table border="1" style="margin-top: 20px">
+      <tr>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>City</th>
+        <th>Programming Language</th>
+        <th>Manager</th>
+        <th>Actions</th>
+      </tr>
+
+      <% employees.forEach(emp => { %>
+      <tr>
+        <td><%= emp.name %></td>
+        <td><%= emp.salary %></td>
+        <td><%= emp.city %></td>
+        <td><%= emp.language %></td>
+        <td><%= emp.isManager ? "Yes" : "No" %></td>
+        <td>Update Delete</td>
+      </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>
